@@ -10,4 +10,8 @@
 ;; (= (__ 11) 22)
 ;; (= (__ 7) 14)
 (ns ........................Volumes.HDD.night1700.Documents.project.myProject.clojure.4clojure-traning.exercise.2day.Double-Down)
-
+;; answer (fn [x] (* x 2))
+(= ((fn [x] (* x 2)) 2) 4)
+(= ((fn [x] (* x 2)) 3) 6) 
+(= ((fn [x] (* x 2)) 11) 22)
+(= ((fn [x] (* x 2)) 7) 14)

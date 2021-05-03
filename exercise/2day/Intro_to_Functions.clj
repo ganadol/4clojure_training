@@ -10,4 +10,8 @@
 ;; (= __ (#(+ % 5) 3))
 ;; (= __ ((partial + 5) 3))
 (ns ........................Volumes.HDD.night1700.Documents.project.myProject.clojure.4clojure-traning.exercise.2day.Intro-to-Functions)
-
+;; answer
+(= 8 ((fn add-five [x] (+ x 5)) 3))
+(= 8 ((fn [x] (+ x 5)) 3))
+(= 8 (#(+ % 5) 3))
+(= 8 ((partial + 5) 3))
