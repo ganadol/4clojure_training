@@ -1,4 +1,4 @@
-;; 2 일차
+;; 3 일차
 ;; 단순재귀 (Simple Recursions)
 ;; url https://www.4clojure.com/problem/57
 ;; 원문
