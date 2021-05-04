@@ -19,4 +19,5 @@
 ;; 정규식패턴은 특별한 리더(reader) 매크로를 통해 지원된다.
 ;; (= __ (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))
 
-;; answer
+;; answer "ABC"
+(= "ABC" (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))

@@ -8,4 +8,5 @@
 ;; 함수형 프로그래밍에서 사용하는 기본적인 기법의 하나다.
 ;; (= __ ((fn foo [x] (when (> x 0) (conj (foo (dec x)) x))) 5))
 
-;; answer
+;; answer '(5 4 3 2 1)
+(= '(5 4 3 2 1) ((fn foo [x] (when (> x 0) (conj (foo (dec x)) x))) 5))
