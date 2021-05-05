@@ -1,6 +1,6 @@
 ;; 2 일차
 ;; Let 사용하기 (Let it Be)
-;; url https://www.4clojure.com/problem/35
+;; url https://www.4clojure.com/problem/36
 ;; 원문
 
 ;; 한글

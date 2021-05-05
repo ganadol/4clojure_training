@@ -13,3 +13,9 @@
 ;; (false? (__ '(:a :b :c)))
 
 ;; answer (fn Palindrome? [x] (if (string? x) (= (str (reverse (seq x)) x)) (= (reverse x) x)))
+;; answer #(= (reverse %) (reverse (reverse %)))
+(false? ((fn Palindrome? [x] (if (string? x) (= (str (reverse (seq x)) x)) (= (reverse x) x))) '(1 2 3 4 5)))
+(true? ((fn Palindrome? [x] (if (string? x) (= (str (reverse (seq x)) x)) (= (reverse x) x))) "racecar"))
+(true? ((fn Palindrome? [x] (if (string? x) (= (str (reverse (seq x)) x)) (= (reverse x) x))) [:foo :bar :foo]))
+(true? ((fn Palindrome? [x] (if (string? x) (= (str (reverse (seq x)) x)) (= (reverse x) x))) '(1 1 3 3 1 1)))
+(false? ((fn Palindrome? [x] (if (string? x) (= (str (reverse (seq x)) x)) (= (reverse x) x))) '(:a :b :c)))

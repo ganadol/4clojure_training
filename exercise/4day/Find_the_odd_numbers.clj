@@ -6,8 +6,13 @@
 ;; 한글
 ;; 시퀀스에서 홀수만 반환하는 함수를 작성하라.
 ;; (= (__ #{1 2 3 4 5}) '(1 3 5))
-;; (= (__ [4 2 1 6]) (1))
+;; (= (__ [4 2 1 6]) '(1))
 ;; (= (__ [2 2 4 6]) '())
 ;; (= (__ [1 1 1 3]) '(1 1 1 3))
 
 ;; answer (fn get-odd-numbers [lst] (for [x lst :when (= true (odd? x))] x))
+;; answer other filter odd?
+(= ((fn get-odd-numbers [lst] (for [x lst :when (= true (odd? x))] x)) #{1 2 3 4 5}) '(1 3 5))
+(= ((fn get-odd-numbers [lst] (for [x lst :when (= true (odd? x))] x)) [4 2 1 6]) '(1))
+(= ((fn get-odd-numbers [lst] (for [x lst :when (= true (odd? x))] x)) [2 2 4 6]) '())
+(= ((fn get-odd-numbers [lst] (for [x lst :when (= true (odd? x))] x)) [1 1 1 3]) '(1 1 1 3))

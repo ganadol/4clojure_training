@@ -7,6 +7,9 @@
 ;; 시퀀스의 뒤에서 두번째 요소를 반환하는 함수를 작성하여라.
 ;; (= (__ (list 1 2 3 4 5)) 4)
 ;; (= (__ ["a" "b" "c"]) "b")
-;; (= (__ ([[1 2] [3 4]])) [1 2])
+;; (= (__ [[1 2] [3 4]]) [1 2])
 
 ;; answer (fn get-reverse-second [lst] (second (reverse lst)))
+(= ((fn get-reverse-second [lst] (second (reverse lst))) (list 1 2 3 4 5)) 4)
+(= ((fn get-reverse-second [lst] (second (reverse lst))) ["a" "b" "c"]) "b")
+(= ((fn get-reverse-second [lst] (second (reverse lst))) [[1 2] [3 4]]) [1 2])

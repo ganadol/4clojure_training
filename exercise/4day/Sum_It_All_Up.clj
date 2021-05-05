@@ -12,3 +12,8 @@
 ;; (= (__ '(1 10 3)) 14)
 
 ;; answer (fn all-sum [lst] (reduce + lst))
+(= ((fn all-sum [lst] (reduce + lst)) [1 2 3]) 6)
+(= ((fn all-sum [lst] (reduce + lst)) (list 0 -2 5 5)) 8)
+(= ((fn all-sum [lst] (reduce + lst)) #{4 2 1}) 7)
+(= ((fn all-sum [lst] (reduce + lst)) '(0 0 -1)) -1)
+(= ((fn all-sum [lst] (reduce + lst)) '(1 10 3)) 14)

@@ -9,5 +9,13 @@
 (= (__ [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
 (= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
 
-;; answer
+;; answer (fn duplicate [x] (let [result (for [y x] (repeat 2 y))] (apply concat result)))
+;; answer #(let [result (for [y %] (repeat 2 y))] (apply concat result))
+;; answer other #(interleave % %)
+;; example interleave
+;; (interleave '(1 2) '(3 2))
+;; (1 3 2 2)
+(= ((fn duplicate [x] (let [result (for [y x] (repeat 2 y))] (apply concat result))) [1 2 3]) '(1 1 2 2 3 3))
+(= ((fn duplicate [x] (let [result (for [y x] (repeat 2 y))] (apply concat result))) [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
+(= ((fn duplicate [x] (let [result (for [y x] (repeat 2 y))] (apply concat result))) [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
 
