@@ -11,3 +11,5 @@
 ;; (take 5 (iterate inc 1))
 ;; iterate함수는 지연 시퀀스를 만드는데 사용될 수 있다.
 ;; (= __ (take 5 (iterate #(+ 3 %) 1)))
+;; answer '(1 4 7 10 13)
+(= '(1 4 7 10 13) (take 5 (iterate #(+ 3 %) 1)))
