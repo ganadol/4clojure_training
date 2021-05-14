@@ -18,20 +18,20 @@
 (= (__ 11)
    [1 10 45 120 210 252 210 120 45 10 1])
 
-[1]                       1
-[1 1]                     2
-[1 2 1]                   3
-[1 3 3  1]                 4
-[1 4 6  4  1]               5
-[1 5 10 10 5  1]
-[1 6 15 20 15 6  1]
-[1 7 21 35 35 21 7 1]
-
-1 1 -1
-1 2 0 -2
-1 6 14 14 0 -14 -14 -6 -1
-
-[1 1]
+;; answer
+(fn [x]
+  (let [lst (range 1 (inc x))
+        paskal (fn [l]
+                 (loop [x l result []]
+                   (if (empty? x)
+                     (cons 1 result)
+                     (if (= (count x) 1)
+                       (recur (rest x) (conj result (first x)))
+                       (recur (rest x) (conj result (+ (first x) (second x))))))))]
+    (loop [a lst result []]
+      (if (empty? a)
+        (vec result)
+        (recur (rest a) (paskal result))))))
 
 
 ;; answer other
@@ -42,23 +42,58 @@
     (last (take n (iterate step [1])))))
 
 
-(defn test2 [l]
-  (loop [x l result []]
-    (if (empty? x)
-      result
-      (if (= (count x) 1)
-        (recur (rest x) (conj result (first x)))
-        (recur (rest x) (conj result (+ (first x) (second x))))))))
-
-(defn test [x]
-  (let [lst (range 1 x)]
-    (loop [a lst result [[1]]]
-      
-        
-
-
-
-
-
+;; answer other
+(fn [n]
+  (loop [n n res [1]]
+    (if (= n 1) res
+        (recur (dec n) (map + (concat [0] res) (concat res [0]))))))
 
       
+(= ((fn [x]
+  (let [lst (range 1 (inc x))
+        paskal (fn [l]
+                 (loop [x l result []]
+                   (if (empty? x)
+                     (cons 1 result)
+                     (if (= (count x) 1)
+                       (recur (rest x) (conj result (first x)))
+                       (recur (rest x) (conj result (+ (first x) (second x))))))))]
+    (loop [a lst result []]
+      (if (empty? a)
+        (vec result)
+        (recur (rest a) (paskal result)))))) 1) [1])
+(= (map (fn [x]
+  (let [lst (range 1 (inc x))
+        paskal (fn [l]
+                 (loop [x l result []]
+                   (if (empty? x)
+                     (cons 1 result)
+                     (if (= (count x) 1)
+                       (recur (rest x) (conj result (first x)))
+                       (recur (rest x) (conj result (+ (first x) (second x))))))))]
+    (loop [a lst result []]
+      (if (empty? a)
+        (vec result)
+        (recur (rest a) (paskal result)))))) (range 1 6))
+   [    [1]
+    [1 1]
+    [1 2 1]
+    [1 3 3 1]
+    [1 4 6 4 1]])
+(= ((fn [x]
+  (let [lst (range 1 (inc x))
+        paskal (fn [l]
+                 (loop [x l result []]
+                   (if (empty? x)
+                     (cons 1 result)
+                     (if (= (count x) 1)
+                       (recur (rest x) (conj result (first x)))
+                       (recur (rest x) (conj result (+ (first x) (second x))))))))]
+    (loop [a lst result []]
+      (if (empty? a)
+        (vec result)
+        (recur (rest a) (paskal result)))))) 11)
+   [1 10 45 120 210 252 210 120 45 10 1])
+
+1 2 1
+  1 2 1
