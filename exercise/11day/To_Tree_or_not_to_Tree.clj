@@ -6,26 +6,20 @@
 ;; 한글
 ;; 해당 시퀀스가 이진트리인지 확인하는 진위 함수를 작성하라.
 ;; 트리의 각 노드는 값과 왼쪽 자식, 그리고 오른쪽 자식을 모두 가져야한다.
-(= (__ '(:a (:b nil nil) nil))
-   true)
-
-(= (__ '(:a (:b nil nil)))
-   false)
-
-(= (__ [1 nil [2 [3 nil nil] [4 nil nil]]])
-   true)
-
-(= (__ [1 [2 nil nil] [3 nil nil] [4 nil nil]])
-   false)
-
-(= (__ [1 [2 [3 [4 nil nil] nil] nil] nil])
-   true)
-
-(= (__ [1 [2 [3 [4 false nil] nil] nil] nil])
-   false)
-
-(= (__ '(:a nil ()))
-   false)
+;; (= (__ '(:a (:b nil nil) nil))
+;;    true)
+;; (= (__ '(:a (:b nil nil)))
+;;    false)
+;; (= (__ [1 nil [2 [3 nil nil] [4 nil nil]]])
+;;    true)
+;; (= (__ [1 [2 nil nil] [3 nil nil] [4 nil nil]])
+;;    false)
+;; (= (__ [1 [2 [3 [4 nil nil] nil] nil] nil])
+;;    true)
+;; (= (__ [1 [2 [3 [4 false nil] nil] nil] nil])
+;;    false)
+;; (= (__ '(:a nil ()))
+;;    false)
 
 ;; answer
 (fn [l]
