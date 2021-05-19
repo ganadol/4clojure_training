@@ -10,8 +10,6 @@
 
 ;; (= __ true)
 
-(ns ..................Volumes.HDD.night1700.Documents.project.myProject.clojure.4clojure-traning.Nothing-but-the-Truth)
-
 (= true true)
 (= (not nil) true)
 (= (not false) true)
